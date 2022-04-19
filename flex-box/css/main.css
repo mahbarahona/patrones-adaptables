@@ -6,6 +6,10 @@
 }
 
 body{
+   
+    
+
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     /* margin: 0 auto;
     max-width: 600px; */
@@ -20,13 +24,7 @@ section{
     border: 1px dashed black;
 }
 
-main{
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        /* padding: 0 1rem; */
 
-}
 
 
 header{
@@ -202,31 +200,67 @@ button:active{
 
 /* tablet */
 @media (min-width:600px) {
+    body{
+        display: grid;
+        grid-template-areas: "header header "
+                             "banner corp "
+                             "strategy work"
 
+                             "partner channels"
+                             "img contact"
+
+                             "footer footer"
+                             ;
+        grid-template-columns: 60% 1fr;
+    }
+    .header{
+        grid-area: header;
+    }
+    .footer{
+        grid-area: footer;
+    }
+    
     .summary{
         min-height: 45vh;
         width: 100%;
-    }
-    main{
-        display: flex;
-        flex-direction: row;
-        /* justify-content: center; */
-        flex-wrap: wrap;
-        /* gap: 1rem; */
-        gap: 0rem;
-    }    
 
-    main section{
-        width: 50%;
+        grid-area: banner;
+    }
+
+    .corp{
+        grid-area: corp;
+    }
+
+    .strategy{
+        grid-area: strategy;
+    }
+
+    .our-work{
+        grid-column: work;
+    }
+    .partnership{
+        grid-area: partner;
+    }
+    .channels{
+        grid-area: channels;
+    }
+    .section-img{
+        display: block;
+        grid-area: img;
+    }
+    .contact{
+        grid-area: contact;
     }
     
-    .contact{
-        order: 1;
-    }
+    
 }
 /* desktop */
 @media (min-width:800px) {
-
+    body{
+        grid-template-areas: "header header header"
+        "banner banner corp"
+        "strategy work corp "
+    }
     .summary{
         min-height: 45vh;
         width: 60%;
