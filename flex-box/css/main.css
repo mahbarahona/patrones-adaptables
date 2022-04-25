@@ -202,54 +202,58 @@ button:active{
 @media (min-width:600px) {
     body{
         display: grid;
-        grid-template-areas: "header header "
-                             "banner corp "
-                             "strategy work"
-
-                             "partner channels"
-                             "img contact"
-
-                             "footer footer"
-                             ;
-        grid-template-columns: 60% 1fr;
+        grid-template-columns: 50% 10% 40%;
+        grid-template-rows: 80px auto 25% 25% 10%; /* header banner grilla footer*/
     }
     .header{
-        grid-area: header;
+        grid-column: 1/4;
+        grid-row: 1/2;
     }
-    .footer{
-        grid-area: footer;
-    }
+
     
     .summary{
+
+        grid-column: 1/3;
+        grid-row: 2/3;
+
         min-height: 45vh;
         width: 100%;
 
-        grid-area: banner;
+        
     }
 
     .corp{
-        grid-area: corp;
+        grid-column: 3/4;
+        grid-row: 2/3;
     }
 
     .strategy{
-        grid-area: strategy;
+        grid-column: 1/2;
+        grid-row: 3/4;
     }
 
-    .our-work{
-        grid-column: work;
-    }
     .partnership{
-        grid-area: partner;
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+    .our-work{
+        grid-column: 1/2;
+        grid-row: 4/5;
     }
     .channels{
-        grid-area: channels;
+        
+    }
+    .footer{
+        grid-column: 1/4;
+        grid-row: 5/6;
     }
     .section-img{
         display: block;
-        grid-area: img;
+        
     }
     .contact{
-        grid-area: contact;
+        grid-column: 3/4;
+        grid-row: 4/5;
     }
     
     
@@ -257,9 +261,7 @@ button:active{
 /* desktop */
 @media (min-width:800px) {
     body{
-        grid-template-areas: "header header header"
-        "banner banner corp"
-        "strategy work corp "
+
     }
     .summary{
         min-height: 45vh;
